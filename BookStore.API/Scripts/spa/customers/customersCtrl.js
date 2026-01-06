@@ -76,4 +76,4 @@
         $scope.search();
     }
 
-})(angular.module('homeCinema'));
+})(angular.module('bookStore'));

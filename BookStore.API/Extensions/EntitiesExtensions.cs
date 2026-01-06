@@ -9,17 +9,14 @@ namespace BookStore.API.Infrastructure.Extensions
 {
     public static class EntitiesExtensions
     {
-        public static void UpdateBook(this Book movie, BookViewModel movieVm)
+        public static void UpdateBook(this Book movie, BookViewModel bookVm)
         {
-            movie.Title = movieVm.Title;
-            movie.Description = movieVm.Description;
-            movie.GenreId = movieVm.GenreId;
-            movie.Director = movieVm.Director;
-            movie.Writer = movieVm.Writer;
-            movie.Producer = movieVm.Producer;
-            movie.Rating = movieVm.Rating;
-            movie.TrailerURI = movieVm.TrailerURI;
-            movie.ReleaseDate = movieVm.ReleaseDate;
+            movie.Title = bookVm.Title;
+            movie.Description = bookVm.Description;
+            movie.AuthorId = bookVm.AuthorId;
+            movie.Rating = bookVm.Rating;
+            movie.TrailURI = bookVm.TrailURI;
+            movie.IssueDate = bookVm.IssueDate;
         }
 
         public static void UpdateCustomer(this Customer customer, CustomerViewModel customerVm)

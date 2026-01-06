@@ -37,7 +37,7 @@ namespace BookStore.API.Controllers
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                var books = _booksRepository.GetAll().OrderByDescending(m => m.ReleaseDate).Take(6).ToList();
+                var books = _booksRepository.GetAll().OrderByDescending(m => m.IssueDate).Take(6).ToList();
 
                 IEnumerable<BookViewModel> booksVM = Mapper.Map<IEnumerable<Book>, IEnumerable<BookViewModel>>(books);
 

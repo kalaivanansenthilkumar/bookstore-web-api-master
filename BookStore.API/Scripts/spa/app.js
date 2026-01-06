@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('homeCinema', ['common.core', 'common.ui'])
+    angular.module('bookStore', ['common.core', 'common.ui'])
         .config(config)
         .run(run);
 
@@ -29,23 +29,23 @@
                 controller: "customersRegCtrl",
                 resolve: { isAuthenticated: isAuthenticated }
             })
-            .when("/movies", {
-                templateUrl: "scripts/spa/movies/movies.html",
-                controller: "moviesCtrl"
+            .when("/books", {
+                templateUrl: "scripts/spa/books/books.html",
+                controller: "bookCtrl"
             })
-            .when("/movies/add", {
-                templateUrl: "scripts/spa/movies/add.html",
-                controller: "movieAddCtrl",
+            .when("/books/add", {
+                templateUrl: "scripts/spa/books/add.html",
+                controller: "bookAddCtrl",
                 resolve: { isAuthenticated: isAuthenticated }
             })
-            .when("/movies/:id", {
-                templateUrl: "scripts/spa/movies/details.html",
-                controller: "movieDetailsCtrl",
+            .when("/books/:id", {
+                templateUrl: "scripts/spa/books/details.html",
+                controller: "bookDetailsCtrl",
                 resolve: { isAuthenticated: isAuthenticated }
             })
-            .when("/movies/edit/:id", {
-                templateUrl: "scripts/spa/movies/edit.html",
-                controller: "movieEditCtrl"
+            .when("/books/edit/:id", {
+                templateUrl: "scripts/spa/books/edit.html",
+                controller: "bookEditCtrl"
             })
             .when("/rental", {
                 templateUrl: "scripts/spa/rental/rental.html",

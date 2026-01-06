@@ -15,7 +15,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.Http;
 
-namespace HomeCinema.Web.App_Start
+namespace BookStore.Web.App_Start
 {
     public class AutofacWebapiConfig
     {

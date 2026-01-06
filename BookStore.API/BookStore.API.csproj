@@ -174,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacWebapiConfig.cs" />
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -228,6 +229,9 @@
     <Compile Include="Infrastructure\Core\MimeMultipart.cs" />
     <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Core\UploadMultipartFormProvider.cs" />
+    <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Mappings\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="Mappings\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="MessageHandlers\BookStoreAuthHandler.cs" />
     <Compile Include="Models\AuthorViewModel.cs" />
     <Compile Include="Models\CustomerViewModel.cs" />
@@ -248,22 +252,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-grid.rtl.css" />
-    <Content Include="Content\bootstrap-grid.rtl.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
-    <Content Include="Content\bootstrap-reboot.rtl.css" />
-    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
-    <Content Include="Content\bootstrap-utilities.css" />
-    <Content Include="Content\bootstrap-utilities.min.css" />
-    <Content Include="Content\bootstrap-utilities.rtl.css" />
-    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.rtl.css" />
-    <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\css\blank.gif" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -278,6 +266,82 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\background.jpg" />
+    <Content Include="Content\images\books\banner-image-bg-1.jpg" />
+    <Content Include="Content\images\books\banner-image-bg-2.jpg" />
+    <Content Include="Content\images\books\banner-image-bg.jpg" />
+    <Content Include="Content\images\books\banner-image.png" />
+    <Content Include="Content\images\books\banner-image1.png" />
+    <Content Include="Content\images\books\banner-image2.png" />
+    <Content Include="Content\images\books\banner-image3.png" />
+    <Content Include="Content\images\books\cart-item1.png" />
+    <Content Include="Content\images\books\cart-item2.png" />
+    <Content Include="Content\images\books\category1.jpg" />
+    <Content Include="Content\images\books\category2.jpg" />
+    <Content Include="Content\images\books\category3.jpg" />
+    <Content Include="Content\images\books\category4.jpg" />
+    <Content Include="Content\images\books\commentor-item1.jpg" />
+    <Content Include="Content\images\books\commentor-item2.jpg" />
+    <Content Include="Content\images\books\commentor-item3.jpg" />
+    <Content Include="Content\images\books\dhl.png" />
+    <Content Include="Content\images\books\minions.jpg" />
+    <None Include="Content\images\books\ted2.jpg%27" />
+    <Content Include="Content\images\books\ted2.jpg" />
+    <Content Include="Content\images\books\insideout.jpg" />
+    <Content Include="Content\images\books\home.jpg" />
+    <Content Include="Content\images\books\trainwreck.jpg" />
+    <Content Include="Content\images\books\batmanvssuperman.jpg" />
+    <Content Include="Content\images\books\antman.jpg" />
+    <Content Include="Content\images\books\jurassicworld.jpg" />
+    <Content Include="Content\images\books\fantasticfour.jpg" />
+    <Content Include="Content\images\books\madmax.jpg" />
+    <Content Include="Content\images\books\southpaw.jpg" />
+    <Content Include="Content\images\books\spectre.jpg" />
+    <Content Include="Content\images\books\thewalkingdead.jpg" />
+    <Content Include="Content\images\books\thelongestride.jpg" />
+    <Content Include="Content\images\books\truedetective.jpg" />
+    <Content Include="Content\images\books\item-image8.jpg" />
+    <Content Include="Content\images\books\item-image9.jpg" />
+    <Content Include="Content\images\books\main-logo.png" />
+    <Content Include="Content\images\books\mastercard.jpg" />
+    <Content Include="Content\images\books\paypal.jpg" />
+    <Content Include="Content\images\books\post-img.jpg" />
+    <Content Include="Content\images\books\post-item1.jpg" />
+    <Content Include="Content\images\books\post-item10.jpg" />
+    <Content Include="Content\images\books\post-item2.jpg" />
+    <Content Include="Content\images\books\post-item3.jpg" />
+    <Content Include="Content\images\books\post-item4.jpg" />
+    <Content Include="Content\images\books\post-item5.jpg" />
+    <Content Include="Content\images\books\post-item6.jpg" />
+    <Content Include="Content\images\books\post-item7.jpg" />
+    <Content Include="Content\images\books\post-item8.jpg" />
+    <Content Include="Content\images\books\post-item9.jpg" />
+    <Content Include="Content\images\books\product-item1.png" />
+    <Content Include="Content\images\books\product-item10.png" />
+    <Content Include="Content\images\books\product-item11.png" />
+    <Content Include="Content\images\books\product-item12.png" />
+    <Content Include="Content\images\books\product-item2.png" />
+    <Content Include="Content\images\books\product-item3.png" />
+    <Content Include="Content\images\books\product-item4.png" />
+    <Content Include="Content\images\books\product-item5.png" />
+    <Content Include="Content\images\books\product-item6.png" />
+    <Content Include="Content\images\books\product-item7.png" />
+    <Content Include="Content\images\books\product-item8.png" />
+    <Content Include="Content\images\books\product-item9.png" />
+    <Content Include="Content\images\books\product-large-1.png" />
+    <Content Include="Content\images\books\product-large-2.png" />
+    <Content Include="Content\images\books\product-large-3.png" />
+    <Content Include="Content\images\books\product-thumbnail-1.png" />
+    <Content Include="Content\images\books\product-thumbnail-2.png" />
+    <Content Include="Content\images\books\product-thumbnail-3.png" />
+    <Content Include="Content\images\books\review-image1.jpg" />
+    <Content Include="Content\images\books\review-image2.jpg" />
+    <Content Include="Content\images\books\search-icon.png" />
+    <Content Include="Content\images\books\shippingcard.png" />
+    <Content Include="Content\images\books\single-image-about.jpg" />
+    <Content Include="Content\images\books\single-image2.jpg" />
+    <Content Include="Content\images\books\single-image2.png" />
+    <Content Include="Content\images\books\single-post.jpg" />
+    <Content Include="Content\images\books\visa.jpg" />
     <Content Include="Content\images\movies\antman.jpg" />
     <Content Include="Content\images\movies\background.jpg" />
     <Content Include="Content\images\movies\batmanvssuperman.jpg" />
@@ -346,6 +410,14 @@
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\spa\books\add.html" />
+    <Content Include="Scripts\spa\books\details.html" />
+    <Content Include="Scripts\spa\books\edit.html" />
+    <Content Include="Scripts\spa\books\bookAddCtrl.js" />
+    <Content Include="Scripts\spa\books\bookDetailsCtrl.js" />
+    <Content Include="Scripts\spa\books\bookEditCtrl.js" />
+    <Content Include="Scripts\spa\books\books.html" />
+    <Content Include="Scripts\spa\books\booksCtrl.js" />
     <Content Include="Scripts\spa\account\login.html" />
     <Content Include="Scripts\spa\account\loginCtrl.js" />
     <Content Include="Scripts\spa\account\register.html" />
@@ -371,14 +443,6 @@
     <Content Include="Scripts\spa\layout\topBar.html" />
     <Content Include="Scripts\spa\modules\common.core.js" />
     <Content Include="Scripts\spa\modules\common.ui.js" />
-    <Content Include="Scripts\spa\movies\add.html" />
-    <Content Include="Scripts\spa\movies\details.html" />
-    <Content Include="Scripts\spa\movies\edit.html" />
-    <Content Include="Scripts\spa\movies\movieAddCtrl.js" />
-    <Content Include="Scripts\spa\movies\movieDetailsCtrl.js" />
-    <Content Include="Scripts\spa\movies\movieEditCtrl.js" />
-    <Content Include="Scripts\spa\movies\movies.html" />
-    <Content Include="Scripts\spa\movies\moviesCtrl.js" />
     <Content Include="Scripts\spa\rental\rental.html" />
     <Content Include="Scripts\spa\rental\rentMovieCtrl.js" />
     <Content Include="Scripts\spa\rental\rentMovieModal.html" />
@@ -416,12 +480,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
-    <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -443,54 +505,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap.rtl.min.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap.rtl.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap.min.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-utilities.min.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-utilities.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-reboot.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-grid.rtl.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-grid.css.map" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

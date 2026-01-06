@@ -75,4 +75,4 @@
         loadStockItems();
     }
 
-})(angular.module('homeCinema'));
+})(angular.module('bookStore'));

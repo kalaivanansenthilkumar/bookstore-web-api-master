@@ -7,33 +7,33 @@
 
     function indexCtrl($scope, apiService, notificationService) {
         $scope.pageClass = 'page-home';
-        $scope.loadingMovies = true;
+        $scope.loadingBooks = true;
         $scope.loadingGenres = true;
         $scope.isReadOnly = true;
 
-        $scope.latestMovies = [];
+        $scope.latestBooks = [];
         $scope.loadData = loadData;
 
         function loadData() {
-            apiService.get('/api/movies/latest', null,
-                        moviesLoadCompleted,
-                        moviesLoadFailed);
+            apiService.get('/api/books/latest', null,
+                booksLoadCompleted,
+                booksLoadFailed);
 
             apiService.get("/api/genres/", null,
                 genresLoadCompleted,
                 genresLoadFailed);
         }
 
-        function moviesLoadCompleted(result) {
-            $scope.latestMovies = result.data;
-            $scope.loadingMovies = false;
+        function booksLoadCompleted(result) {
+            $scope.latestBooks = result.data;
+            $scope.loadingBooks = false;
         }
 
         function genresLoadFailed(response) {
             notificationService.displayError(response.data);
         }
 
-        function moviesLoadFailed(response) {
+        function booksLoadFailed(response) {
             notificationService.displayError(response.data);
         }
 
@@ -61,4 +61,4 @@
         loadData();
     }
 
-})(angular.module('homeCinema'));
+})(angular.module('bookStore'));

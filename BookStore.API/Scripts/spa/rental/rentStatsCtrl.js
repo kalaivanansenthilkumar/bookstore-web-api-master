@@ -51,4 +51,4 @@
         loadStatistics();
     }
 
-})(angular.module('homeCinema'));
+})(angular.module('bookStore'));
