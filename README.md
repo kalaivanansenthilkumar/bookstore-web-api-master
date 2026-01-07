@@ -13,10 +13,10 @@ Bootstrap 3
 Installation instructions
 Build solution to restore packages
 Rebuild solution
-Change the connection strings inside the HomeCinema.Data/App.config and HomeCinema.Web/Web.config accoarding to your development environment
+Change the connection strings inside the BookStore.Data/App.config and BookStore.API/Web.config accoarding to your development environment
 Open Package Manager Console
 Select HomeCinema.Data as Default project (in package manager console) and run the following commands
 add-migration "initial"
 update-database -verbose
-Run HomeCinema.Web application
+Run BookStore.Data application
 
