@@ -1,4 +1,4 @@
-﻿<div id="editMovieWrapper">
+﻿<div id="editBookWrapper">
     <hr>
     <div class="row">
         <!-- left column -->
@@ -16,15 +16,15 @@
             <div class="alert alert-info alert-dismissable">
                 <a class="panel-close close" data-dismiss="alert">×</a>
                 <i class="fa fa-plus"></i>
-                Add <strong>{{movie.Title}}</strong> movie. Make sure you fill all required fields.
+                Add <strong>{{book.Title}}</strong> Book. Make sure you fill all required fields.
             </div>
 
-            <form class="form-horizontal" role="form" novalidate angular-validator name="addMovieForm" angular-validator-submit="AddMovie()">
+            <form class="form-horizontal" role="form" novalidate angular-validator name="addBookForm" angular-validator-submit="AddBook()">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-xs-6 col-sm-4">
-                            <label class="control-label">Movie title</label>
-                            <input class="form-control" name="title" type="text" ng-model="movie.Title"
+                            <label class="control-label">Book title</label>
+                            <input class="form-control" name="title" type="text" ng-model="book.Title"
                                    validate-on="blur" required required-message="'Movie title is required'">
                         </div>
 
@@ -52,7 +52,7 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-xs-4">
-                            <label class="control-label">Director</label>
+                            <label class="control-label">Author</label>
                             <input class="form-control" type="text" ng-model="movie.Director" name="director"
                                    validate-on="blur" required required-message="'Movie director is required'">
                         </div>

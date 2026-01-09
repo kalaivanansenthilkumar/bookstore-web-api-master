@@ -1,18 +1,18 @@
 ﻿(function (app) {
     'use strict';
 
-    app.controller('bookAddCtrl', movieAddCtrl);
+    app.controller('bookAddCtrl', bookAddCtrl);
 
-    movieAddCtrl.$inject = ['$scope', '$location', '$routeParams', 'apiService', 'notificationService', 'fileUploadService'];
+    bookAddCtrl.$inject = ['$scope', '$location', '$routeParams', 'apiService', 'notificationService', 'fileUploadService'];
 
-    function movieAddCtrl($scope, $location, $routeParams, apiService, notificationService, fileUploadService) {
+    function bookAddCtrl($scope, $location, $routeParams, apiService, notificationService, fileUploadService) {
 
         $scope.pageClass = 'page-movies';
         $scope.movie = { GenreId: 1, Rating: 1, NumberOfStocks: 1 };
 
         $scope.genres = [];
         $scope.isReadOnly = false;
-        $scope.AddMovie = AddMovie;
+        $scope.AddBook = AddBook;
         $scope.prepareFiles = prepareFiles;
         $scope.openDatePicker = openDatePicker;
         $scope.changeNumberOfStocks = changeNumberOfStocks;
