@@ -27,7 +27,7 @@
             .when("/customers/register", {
                 templateUrl: "scripts/spa/customers/register.html",
                 controller: "customersRegCtrl",
-                resolve: { isAuthenticated: isAuthenticated }
+                
             })
             .when("/books", {
                 templateUrl: "scripts/spa/books/books.html",
@@ -36,12 +36,12 @@
             .when("/books/add", {
                 templateUrl: "scripts/spa/books/add.html",
                 controller: "bookAddCtrl",
-                resolve: { isAuthenticated: isAuthenticated }
+                
             })
             .when("/books/:id", {
                 templateUrl: "scripts/spa/books/details.html",
                 controller: "bookDetailsCtrl",
-                resolve: { isAuthenticated: isAuthenticated }
+                
             })
             .when("/books/edit/:id", {
                 templateUrl: "scripts/spa/books/edit.html",
